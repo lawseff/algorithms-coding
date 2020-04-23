@@ -37,6 +37,16 @@ public class ListMergerTest {
                     Collections.emptyList(),
                     Collections.emptyList()
                 },
+                {
+                    mutableList(1, 3, 5),
+                    List.of(2, 6, 8),
+                    List.of(1, 2, 3, 5, 6, 8)
+                },
+                {
+                    mutableList(1, 3, 5, 11, 22, 41),
+                    List.of(2, 6, 8, 8, 11, 12),
+                    List.of(1, 2, 3, 5, 6, 8, 8, 11, 11, 12, 22, 41),
+                }
         };
     }
 
@@ -50,7 +60,7 @@ public class ListMergerTest {
         merger.mergeSortedLists(first, second);
 
         // then
-        Assert.assertEquals(first, expected);
+        Assert.assertEquals(expected, first);
     }
 
     private static List<Integer> mutableList(int... values) {
