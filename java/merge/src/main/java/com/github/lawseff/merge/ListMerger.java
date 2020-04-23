@@ -4,12 +4,18 @@ import java.util.List;
 
 public class ListMerger {
 
+    /**
+     * Merges the second list elements into the first list while maintaining the sort order.
+     * @param first sorted list
+     * @param second sorted list
+     * @param <T> any comparable type
+     */
     public <T extends Comparable<T>> void mergeSortedLists(List<T> first, List<T> second) {
         int begin = 0;
         for (T value : second) {
             int index = findIndexToInsert(first, begin, value);
             first.add(index, value);
-            begin = index + 1;
+            begin = index + 1; // because the second list is sorted as well
         }
     }
 

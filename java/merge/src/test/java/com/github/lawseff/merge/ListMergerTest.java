@@ -20,12 +20,17 @@ public class ListMergerTest {
                 {
                     mutableList(-3, 1, 2, 3, 5),
                     Collections.singletonList(4),
-                    Arrays.asList(-3, 1, 2, 3, 4, 5)
+                    List.of(-3, 1, 2, 3, 4, 5)
                 },
                 {
                     mutableList(1, 5),
                     List.of(-256, 256),
                     List.of(-256, 1, 5, 256)
+                },
+                {
+                    mutableList(1, 2, 3, 4, 5),
+                    List.of(1, 2, 3, 4, 5),
+                    List.of(1, 1, 2, 2, 3, 3, 4, 4, 5, 5)
                 },
                 {
                     Collections.emptyList(),
